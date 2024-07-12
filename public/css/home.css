@@ -1,0 +1,104 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Slider Section Styles */
+.slider_section {
+    padding: 60px 0;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.detail-box {
+    text-align: left;
+    animation: fadeInLeft 1s ease-in-out;
+    padding-top: 60px 0px;
+}
+
+.detail-box h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    color: #343a40;
+    margin-bottom: 20px;
+}
+
+.detail-box a {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: #ffffff;
+    background-color: #007bff;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.detail-box a:hover {
+    background-color: #0056b3;
+}
+
+.img-box {
+    text-align: center;
+    animation: fadeInRight 1s ease-in-out;
+}
+
+.img-box img {
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .slider_section {
+        flex-direction: column;
+        padding: 30px 0;
+    }
+
+    .detail-box, .img-box {
+        width: 100%;
+        text-align: center;
+    }
+
+    .detail-box h1 {
+        font-size: 2.5rem;
+    }
+
+    .detail-box a {
+        margin-top: 20px;
+    }
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

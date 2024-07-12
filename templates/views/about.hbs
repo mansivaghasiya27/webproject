@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather / About</title>
+    <link rel="stylesheet" href="css/about.css">
+    {{> headlinks}}
+    </head>
+<body>  
+    {{> header}}
+    <main class="about-container">
+        <h2 class="fade-in">Welcome to Your Weather Update Hub!</h2>
+        <p class="fade-in delay-1">At [Your Website Name], we are dedicated to providing you with accurate and up-to-date weather information tailored to your needs. Our mission is to ensure that you stay informed about the latest weather conditions, no matter where you are.</p>
+        
+        <h3 class="fade-in delay-2">Why Choose Us?</h3>
+        <div class="reasons fade-in delay-3">
+            <div class="reason">
+                <img src="/images/accuracy.png" alt="Accurate and Reliable Data">
+                <h4>Accurate and Reliable Data</h4>
+                <p>We leverage the latest technology and trusted sources to deliver precise weather forecasts. Our data is updated frequently to reflect the most current conditions.</p>
+            </div>
+            <div class="reason">
+                <img src="/images/user.png" alt="User-Friendly Interface">
+                <h4>User-Friendly Interface</h4>
+                <p>Our intuitive design allows you to quickly and easily access the weather information you need. Simply enter your city name, and our system will provide detailed weather forecasts, including temperature, humidity, and weather conditions.</p>
+            </div>
+            <div class="reason">
+                <img src="/images/global.png" alt="Global Coverage">
+                <h4>Global Coverage</h4>
+                <p>Whether you are planning a trip abroad or just want to know the weather in your area, we've got you covered. Our service provides weather updates for locations all around the world.</p>
+            </div>
+        </div>
+    </main>
+    {{> footer}}
+</body>
+</html>

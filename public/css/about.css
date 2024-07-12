@@ -1,0 +1,69 @@
+.about-container {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: 20px auto;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.about-container h2, .about-container h3, .about-container h4 {
+    color: #007BFF;
+    margin-bottom: 20px;
+}
+
+.about-container p {
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.reasons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.reason {
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 20px;
+}
+
+.reason img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.5s;
+}
+
+.delay-2 {
+    animation-delay: 1s;
+}
+
+.delay-3 {
+    animation-delay: 1.5s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .reason {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather / Weather</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/weather.css">
+    {{> headlinks}}
+   </head>
+<body>  
+    {{> header}}
+    <section class="slider_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="detail-box">
+                    <h1>
+                        Enter Your City!
+                    </h1>
+                    <input type="text" id="cityInput" placeholder="Enter City Name">
+                    <button onclick="fetchWeather()">Check Forecast</button>
+                </div>
+                
+            </div>
+            <div class="col-md-6">
+                <div id="resultBox" class="result-box">
+                    <div id="dateDay"></div>
+                    <div id="weatherResult"></div>
+                    <div id="loadingSpinner" class="spinner" style="display: none;">
+                        <div class="spinner-inner"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+        // Function to fetch weather data
+        async function fetchWeather() {
+            const cityName = document.getElementById('cityInput').value;
+            if (!cityName) {
+                alert('Please enter a city name.');
+                return;
+            }
+
+            const weatherResult = document.getElementById('weatherResult');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+
+            // Show the spinner
+            loadingSpinner.style.display = 'flex';
+            weatherResult.innerHTML = '';
+
+            const apiKey = '90d12bb7aceb08e2e50a9a1c8c4bbfdf'; // Replace with your weather API key
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`);
+            const data = await response.json();
+
+            // Hide the spinner
+            loadingSpinner.style.display = 'none';
+
+            if (data.cod === '404') {
+                weatherResult.innerText = 'City not found.';
+            } else {
+                const weatherDescription = data.weather[0].description;
+                const temperature = data.main.temp;
+                const humidity = data.main.humidity;
+                const city = data.name;
+                const country = data.sys.country;
+                const iconCode = data.weather[0].icon;
+
+                weatherResult.innerHTML = `
+                    <h2> ${city}, ${country} </h2>
+                    <div class="weather-icon">
+                        <img src="http://openweathermap.org/img/wn/${iconCode}@2x.png" alt="Weather Icon">
+                    </div>
+                    <p><b>Weather:</b> ${weatherDescription}</p>
+                    <p><b>Temperature:</b> ${temperature}°C</p>
+                    <p><b>Humidity:</b> ${humidity}%</p>
+                `;
+            }
+        }
+
+        // Function to display current date and day
+        function displayDateAndDay() {
+            const now = new Date();
+            const options = { day: 'numeric', month: 'long', weekday: 'long' };
+            const formattedDate = now.toLocaleDateString(undefined, options);
+            document.getElementById('dateDay').innerText = formattedDate;
+        }
+
+        // Call displayDateAndDay on page load
+        window.onload = displayDateAndDay;
+
+    </script>
+    {{> footer}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
+</body>
+</html>

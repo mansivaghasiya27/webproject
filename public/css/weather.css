@@ -1,0 +1,150 @@
+
+
+.detail-box {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.detail-box h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+.detail-box input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.detail-box button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #007BFF;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.detail-box button:hover {
+    background: #0056b3;
+}
+
+.result-box {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeInRight 1s ease-in-out;
+    position: relative;
+    width: 90%;
+    height: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+#dateDay {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #555;
+    position: absolute;
+    top: 5px;
+    right: 20px;
+}
+
+.weather-icon {
+    margin-bottom: 10px;
+}
+
+.result-box p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+/* Add this to your existing CSS file (about.css) */
+
+/* Updated Loading Spinner Style */
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+}
+
+.spinner-inner {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #007BFF;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.result-box {
+    position: relative; /* Ensure resultBox is the reference point for absolute positioning */
+}
+
+@media (max-width: 768px) {
+    .detail-box h1 {
+        font-size: 1.5rem;
+    }
+
+    .detail-box input[type="text"] {
+        width: 90%;
+    }
+
+    .detail-box button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .result-box p {
+        font-size: 1rem;
+    }
+
+    #dateDay {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .detail-box h1 {
+        font-size: 1.2rem;
+    }
+
+    .detail-box input[type="text"] {
+        width: 100%;
+    }
+
+    .detail-box button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .result-box p {
+        font-size: 0.9rem;
+    }
+
+    #dateDay {
+        font-size: 1rem;
+    }
+}
